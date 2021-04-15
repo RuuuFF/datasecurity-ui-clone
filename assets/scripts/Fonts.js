@@ -1,3 +1,9 @@
+const Options = {
+  minWidth: 420,
+  maxWidth: 1365,
+  measure: "rem"
+}
+
 const Fonts = [
   {
     selector: ".logo a",
@@ -48,4 +54,4 @@ const Fonts = [
   }
 ]
 
-export { Fonts }
+export { Fonts, Options }
