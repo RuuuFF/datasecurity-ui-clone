@@ -1,6 +1,6 @@
 const Fonts = [
   {
-    el: document.querySelectorAll(".logo a"),
+    selector: ".logo a",
     minFontsize: 1.8,
     maxFontsize: 2.8,
     minLineheight: 2,
@@ -8,7 +8,7 @@ const Fonts = [
   },
 
   {
-    el: document.querySelectorAll("h1"),
+    selector: "h1",
     minFontsize: 2,
     maxFontsize: 3,
     minLineheight: 2.6,
@@ -16,7 +16,7 @@ const Fonts = [
   },
 
   {
-    el: document.querySelectorAll("h2"),
+    selector: "h2",
     minFontsize: 4.8,
     maxFontsize: 5.2,
     minLineheight: 5.68,
@@ -24,7 +24,7 @@ const Fonts = [
   },
 
   {
-    el: document.querySelectorAll("h3"),
+    selector: "h3",
     minFontsize: 2,
     maxFontsize: 3,
     minLineheight: 2.6,
@@ -32,7 +32,7 @@ const Fonts = [
   },
 
   {
-    el: document.querySelectorAll("h4"),
+    selector: "h4",
     minFontsize: 2,
     maxFontsize: 2.4,
     minLineheight: 2.6,
@@ -40,7 +40,7 @@ const Fonts = [
   },
 
   {
-    el: document.querySelectorAll("p"),
+    selector: "p",
     minFontsize: 1.4,
     maxFontsize: 1.6,
     minLineheight: 2.6,
