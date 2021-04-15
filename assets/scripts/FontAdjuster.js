@@ -1,12 +1,8 @@
-import { Fonts } from './Fonts.js'
+import { Fonts, Options } from './Fonts.js'
 
 const Font = {
-  minWidth: 420,
-  maxWidth: 1365,
-  measure: "rem",
-
   scale(num, in_min, in_max, out_min, out_max) {
-    let value = (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    let value = (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
     
     value <= out_min ? value = out_min : value
     value >= out_max ? value = out_max : value
@@ -17,7 +13,7 @@ const Font = {
   scaler(min, max) {
     const screenWidth = Number(window.innerWidth)
 
-    return Font.scale(screenWidth, Font.minWidth, Font.maxWidth, min, max)
+    return Font.scale(screenWidth, Number(Options.minWidth), Number(Options.maxWidth), min, max)
   },
 
   fontAdjust() {
@@ -25,8 +21,11 @@ const Font = {
       const { selector, minFontsize, maxFontsize, minLineheight, maxLineheight } = obj
 
       document.querySelectorAll(selector).forEach(el => {
-        el.style.fontSize = `${Font.scaler(minFontsize, maxFontsize) + Font.measure}`
-        el.style.lineHeight = `${Font.scaler(minLineheight, maxLineheight) + Font.measure}`
+        const fontSize = Font.scaler(minFontsize, maxFontsize)
+        const lineHeight = Font.scaler(minLineheight, maxLineheight)
+
+        el.style.fontSize = String(fontSize + Options.measure)
+        el.style.lineHeight = String(lineHeight + Options.measure)
       })
     })
   },
