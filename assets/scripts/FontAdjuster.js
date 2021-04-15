@@ -22,9 +22,9 @@ const Font = {
 
   fontAdjust() {
     Fonts.forEach(obj => {
-      const { el, minFontsize, maxFontsize, minLineheight, maxLineheight } = obj
+      const { selector, minFontsize, maxFontsize, minLineheight, maxLineheight } = obj
 
-      el.forEach(el => {
+      document.querySelectorAll(selector).forEach(el => {
         el.style.fontSize = `${Font.scaler(minFontsize, maxFontsize) + Font.measure}`
         el.style.lineHeight = `${Font.scaler(minLineheight, maxLineheight) + Font.measure}`
       })
