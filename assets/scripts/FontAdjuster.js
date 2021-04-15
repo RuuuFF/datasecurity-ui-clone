@@ -3,6 +3,7 @@ import { Fonts } from './Fonts.js'
 const Font = {
   minWidth: 420,
   maxWidth: 1365,
+  measure: "rem",
 
   scale(num, in_min, in_max, out_min, out_max) {
     let value = (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -15,6 +16,7 @@ const Font = {
 
   scaler(min, max) {
     const screenWidth = Number(window.innerWidth)
+
     return Font.scale(screenWidth, Font.minWidth, Font.maxWidth, min, max)
   },
 
@@ -23,8 +25,8 @@ const Font = {
       const { el, minFontsize, maxFontsize, minLineheight, maxLineheight } = obj
 
       el.forEach(el => {
-        el.style.fontSize = `${Font.scaler(minFontsize, maxFontsize)}rem`
-        el.style.lineHeight = `${Font.scaler(minLineheight, maxLineheight)}rem`
+        el.style.fontSize = `${Font.scaler(minFontsize, maxFontsize) + Font.measure}`
+        el.style.lineHeight = `${Font.scaler(minLineheight, maxLineheight) + Font.measure}`
       })
     })
   },
