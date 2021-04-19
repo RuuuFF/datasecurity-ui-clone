@@ -111,7 +111,9 @@ body {
 
 #header,
 .first-section,
-.secondary-section {
+.secondary-section,
+.third-section,
+.fifth-section {
   background-color: var(--dark-blue);
 }
 
@@ -185,18 +187,23 @@ body {
 }
 
 .first-section .image-container {
-  margin: 10rem 0 27rem 12.3rem;
   width: 78.4rem;
+  height: 58.5rem;
+  margin: 10rem 23.3rem 27rem 12.3rem;
   position: relative;
 }
 
 .first-section .image-container img {
   width: 100%;
-  position: relative;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: 3;
 }
 
-.first-section .image-container .bar {
+.first-section .image-container::before {
+  content: "";
   position: absolute;
   top: -10rem;
   left: 50%;
@@ -207,12 +214,12 @@ body {
   z-index: 2;
 }
 
-.first-section .image-container .circle {
+.first-section .image-container::after {
+  content: "";
   position: absolute;
-  top: -5rem;
+  top: 5rem;
   left: -12.3rem;
-  width: 20.4rem;
-  height: 20.4rem;
+  transform: translate(0, -50%);
   border-radius: 50%;
   background-color: var(--circle-bg);
   z-index: 4;
@@ -299,4 +306,161 @@ body {
   display: flex;
   justify-content: center;
   margin: 4.1rem 0 6rem;
+}
+
+.third-section .inner-content {
+  display: flex;
+  padding: 6rem 0;
+}
+
+.third-section section {
+  padding: 3rem;
+}
+
+.third-section section:first-child h2 {
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+.third-section section:first-child .image-container {
+  position: relative;
+}
+
+.third-section section:first-child .image-container::before {
+  content: "";
+  background-color: var(--light-blue);
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 50vw;
+  height: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.third-section section:first-child .image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.third-section section:last-child ol li {
+  padding: 3rem 0;
+}
+
+.third-section section:last-child ol li h3 {
+  color: var(--logo-color);
+  letter-spacing: 0.2rem;
+}
+
+.third-section section:last-child ol li > div {
+  margin-left: 5rem;
+}
+
+.third-section section:last-child ol li p {
+  margin: 2rem 0;
+  color: var(--color-white);
+}
+
+.third-section section:last-child ol li a {
+  display: inline-block;
+  color: var(--color-white);
+  letter-spacing: 0.3rem;
+  margin-bottom: 2rem;
+  border-bottom: 0.2rem solid var(--color-white);
+}
+
+.fourth-section {
+  background-color: var(--light-blue);
+  border: 1px solid transparent;
+}
+
+.fourth-section .inner-content {
+  padding: 3rem 6rem;
+  margin: 3.4rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.fourth-section .inner-content h3 {
+  color: var(--dark-blue);
+}
+
+.fourth-section .inner-content .btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.fifth-section {
+  border: 1px solid transparent;
+}
+
+.fifth-section .ball-section {
+  margin: 9rem 0 6rem;
+}
+
+.fifth-section .blue-ball {
+  width: 11.4rem;
+  height: 11.4rem;
+  margin: 0 3rem 0 auto;
+  border-radius: 50%;
+  background-color: var(--light-blue);
+}
+
+.fifth-section section:nth-child(2) {
+  margin: 0 9rem;
+}
+
+.fifth-section section:nth-child(2) .inner-content {
+  display: grid;
+  grid-template-columns: 39% 61%;
+}
+
+.fifth-section section:nth-child(2) .inner-content .text {
+  max-height: 58.1rem;
+  padding: 9rem 3rem;
+  background-color: var(--color-white);
+}
+
+.fifth-section section:nth-child(2) .inner-content .text p.bigger {
+  font-weight: 300;
+}
+
+.fifth-section section:nth-child(2) .inner-content .text .btn-container {
+  margin-top: 6rem;
+}
+
+.fifth-section section:nth-child(2) .inner-content .image-container {
+  max-height: 58.1rem;
+}
+
+.fifth-section section:nth-child(2) .inner-content .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fifth-section section:last-child {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-bottom: 23.2rem;
+}
+
+.fifth-section section:last-child .inner-content {
+  background-color: var(--light-blue);
+  position: absolute;
+  right: 0;
+  top: -10.8rem;
+  max-width: 47.4rem;
+
+  padding: 3rem;
+  position: absolute;
+}
+
+.fifth-section section:last-child .inner-content h3.bigger {
+  color: var(--dark-blue);
 }
