@@ -54,6 +54,14 @@ CSSSelectors = [
   },
 
   {
+    selector: "h3.low",
+    propAndValue: [
+      { property: "font-size", min: 3.6, max: 3.6 },
+      { property: "line-height", min: 3.9, max: 3.9 }
+    ]
+  },
+
+  {
     selector: "h4",
     propAndValue: [
       { property: "font-size", min: 2, max: 2.4 },
@@ -62,7 +70,7 @@ CSSSelectors = [
   },
 
   {
-    selector: "p",
+    selector: "p, input, textarea",
     propAndValue: [
       { property: "font-size", min: 1.4, max: 1.6 },
       { property: "line-height", min: 2.6, max: 2.8 }
@@ -97,16 +105,8 @@ CSSSelectors = [
   {
     selector: ".third-section section:last-child ol a",
     propAndValue: [
-      {
-        property: "font-size",
-        min: 1.4,
-        max: 1.6,
-      },
-      {
-        property: "line-height",
-        min: 2.6,
-        max: 2.8,
-      }
+      { property: "font-size", min: 1.4, max: 1.6 },
+      { property: "line-height", min: 2.6, max: 2.8 }
     ]
   }
 ]
