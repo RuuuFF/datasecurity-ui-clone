@@ -61,9 +61,7 @@ a {
   display: inline-block;
   padding: 1rem 3rem;
   border-radius: 5rem;
-  font-size: 1.6rem;
   letter-spacing: 0.2rem;
-  line-height: 2.56rem;
   font-weight: 700;
   transition: background-color 0.1s ease, color 0.1s ease;
 }
@@ -80,6 +78,7 @@ a {
 
 .btn-container .btn.light-blue {
   background-color: var(--light-blue);
+  color: var(--dark-blue);
 }
 
 .btn-container .btn.light-blue:hover {
@@ -123,7 +122,7 @@ body {
 .fifth-section,
 .sixth-section,
 .seventh-section {
-  border: 1px solid transparent;
+  border: 0.01px solid transparent;
 }
 
 .container {
@@ -222,8 +221,10 @@ body {
 .first-section .image-container::after {
   content: "";
   position: absolute;
-  top: 5rem;
+  top: 4%;
   left: -12.3rem;
+  width: 26%;
+  height: 34.69%;
   transform: translate(0, -50%);
   border-radius: 50%;
   background-color: var(--circle-bg);
@@ -279,7 +280,8 @@ body {
   z-index: 1;
 }
 
-.secondary-section .inner-content > section::before {
+.secondary-section .inner-content > section::before,
+.secondary-section .inner-content > section::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -331,8 +333,6 @@ body {
   position: relative;
   width: 100%;
   max-width: 73rem;
-  height: 100%;
-  max-height: 41.3rem;
 }
 
 .third-section section:first-child .image-container::before {
@@ -347,10 +347,12 @@ body {
   z-index: 1;
 }
 
-.third-section section:first-child .image-container img {
-  height: 100%;
+.third-section section:first-child .image-container div {
+  padding-bottom: 56.57%;
   width: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   z-index: 2;
 }
@@ -467,12 +469,10 @@ body {
   right: 0;
   top: -10.8rem;
   max-width: 47.4rem;
-
   padding: 3rem;
-  position: absolute;
 }
 
-.fifth-section section:last-child .inner-content h3.bigger {
+.fifth-section section:last-child .inner-content h3 {
   color: var(--dark-blue);
 }
 
@@ -562,7 +562,7 @@ body {
 
 .eighth-section .inner-content .img-side {
   position: relative;
-  padding: 6rem 0;
+  padding: 6rem 0 6rem 6rem;
   height: 100%;
   width: 100%;
   max-height: 65.7rem;
@@ -582,17 +582,16 @@ body {
 .eighth-section .inner-content .image-container {
   width: 100%;
   height: 100%;
-  max-width: 53.6rem;
-  max-height: 53.6rem;
   position: relative;
   margin-left: auto;
 }
 
-.eighth-section .inner-content .image-container img {
+.eighth-section .inner-content .image-container div {
   width: 100%;
-  height: 100%;
-  min-height: 53.6rem;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 100%;
   position: relative;
   z-index: 2;
 }
@@ -633,6 +632,12 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.textarea-field textarea {
+  resize: vertical;
+  min-height: 10rem;
+  max-height: 20rem;
+}
+
 .input-field + .input-field,
 .textarea-field,
 .button-field {
@@ -658,4 +663,39 @@ body {
 .button-field input:hover {
   color: var(--dark-blue);
   background-color: var(--color-white);
+}
+
+footer {
+  background-color: rgb(31, 31, 31);
+}
+
+footer .inner-content {
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer ul {
+  display: flex;
+}
+
+footer ul li,
+footer ul li a {
+  color: var(--color-white);
+}
+
+footer ul li a {
+  border-bottom: 1px solid var(--color-white);
+  transition: filter 0.01s ease;
+}
+
+footer ul li a:hover {
+  filter: brightness(0.8);
+}
+
+footer ul li + li {
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-left: 1px solid var(--color-white);
 }
