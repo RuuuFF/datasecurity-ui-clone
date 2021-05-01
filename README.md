@@ -1,6 +1,6 @@
 ## ⚙️ Projeto
 
-Esta aplicação é uma reprodução da UI da página <a href="https://nicepage.com/website-templates/preview/data-center-security-solutions-313607?device=desktop">Data Security</a>, utilizando HTML, CSS e uma "mini lib" desenvolvida por mim, com JavaScript, para ajustar medidas (font-size, line-height, width, height, etc) de uma forma mais prática e intuitiva que css Media Queries, apenas informando o seletor, seu valor máximo e minimo.
+Esta aplicação é uma reprodução da UI da página <a href="https://nicepage.com/website-templates/preview/data-center-security-solutions-313607?device=desktop">Data Security</a>, utilizando **HTML**, **CSS** e uma "mini lib" **desenvolvida por mim**, com **JavaScript**, para ajustar medidas (font-size, line-height, width, height, etc) de uma forma **mais prática e intuitiva** que CSS Media Queries, apenas informando o seletor, seu valor minimo e máximo.
 
 ## ✈️ Tecnologias
 
