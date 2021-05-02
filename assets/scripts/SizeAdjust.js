@@ -112,9 +112,9 @@ const CSSSelectors = [
 
 const SizeAdjust = {
   createStyleEl() {
-    const style = document.createElement('style')
-    document.getElementsByTagName('head')[0].appendChild(style)
-    style.insertAdjacentHTML("beforebegin", "<!-- Style injected by SizeAdjust (github.com/ruuuff) -->")
+    const styleEl = document.createElement('style')
+    document.getElementsByTagName('head')[0].appendChild(styleEl)
+    styleEl.insertAdjacentHTML("beforebegin", "<!-- Style injected by SizeAdjust (github.com/ruuuff) -->")
   },
 
   scale(num, in_min, in_max, out_min, out_max) {
@@ -122,7 +122,7 @@ const SizeAdjust = {
     
     value <= out_min ? value = out_min : value
     value >= out_max ? value = out_max : value
-    
+
     return value
   },
 
@@ -131,15 +131,14 @@ const SizeAdjust = {
   },
 
   innerStyles() {
-    const style = document.getElementsByTagName('style')[0]
-
+    const style = document.querySelector('head style:last-child')
     style.innerHTML = ""
 
     CSSSelectors.forEach(({ selector, propAndValue }) => {
       style.insertAdjacentHTML("beforeend", `${selector} {`)
 
       propAndValue.forEach(({ property, min, max }) => {
-        const size = SizeAdjust.callScaleWithParameters(min, max).toFixed(1)
+        const size = SizeAdjust.callScaleWithParameters(Number(min), Number(max)).toFixed(2)
 
         style.insertAdjacentHTML("beforeend", `  ${property}: ${size + Options.measure};`)
       })
