@@ -12,5 +12,5 @@ Esta aplicação é uma reprodução da UI da página <a href="https://nicepage.
 
 <div align="center">
   <img alt="DataSecurity Clone" src="https://i.imgur.com/qwDcXLv.png" width="450px"> 
-  <p>Confira o resultado: <a href="https://hyperspace-ui-ruuuff.netlify.app">Data Security UI</a></p>
+  <p>Confira o resultado: <a href="https://datasecurity-ui-ruuuff.netlify.app">Data Security UI</a></p>
 </div>
